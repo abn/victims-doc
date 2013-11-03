@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Eclipse_Plugin_User_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-Eclipse_Plugin_User_Guide-Implementation">
+	<title>Implementation</title>
+	<para>
+		Utilising the Victims Java library the program creates a local copy of the database which is then synchronised automatically/daily or not at all based on settings defined when executing the task. Please note that the first execution of the task will take some time as it synchronises the whole Victims database. The files to scan are fetched from Eclipse via the projects dependencies that you are executing it against. Currently, the plugin will scan all dependencies linked to a project. Due to the way Eclipse handles the core java libraries, these will also be scanned. In future versions this functionality will be provided as an option. The plugin utilises caching so consecutive scans will be efficient and has a concurrent implementation so large projects shouldn't be a problem. 
+	</para>
+</chapter>
+
+
