@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Jenkins_Plugin_User_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-Jenkins_Plugin_User_Guide-Usage">
+	<title>Usage</title>
+	<para>
+		<emphasis>
+			For the purposes of this guide we assume you have Jenkins-CI installed.
+			</emphasis>
+	</para>
+	<section id="sect-Jenkins_Plugin_User_Guide_Usage-getting_plugin">
+	<title>Obtaining Victims Plugin HPI</title>
+		<para>
+			Currently the Victims plugin can only be obtained by compiling from <ulink url="https://github.com/victims/victims-plugin-jenkins">source</ulink>.  The project is built using Maven with the following command:
+			<programlisting language="Bash"><![CDATA[mvn install]]></programlisting>
+		</para>
+	</section>
+	<section id="sect-Jenkins_Plugin_User_Guide_Usage-installation.xml">
+		<title>Installation</title>
+		<para>
+			The plugin can be installed through Jenkins' plugin manager (http://yourhost/jenkins/pluginManager/).
+		</para>
+	</section>
+	<section id="sect-Jenkins_Plugin_User_Guide_Usage-adding_action.xml">
+		<title>Adding Victims Action</title>
+		<para>
+			To add the victims post build scan action go into the configuation page for your project.  From there the post build action can be added and configured.
+		</para>
+	</section>
+	<section id="sect-Jenkins_Plugin_User_Guide_Usage-config_options.xml">
+		<title>Configuration Options</title>
+		<formalpara><title>baseUrl</title>
+			<para>
+				<simplelist>
+					<member>The URL of the victims web service used to synchronize the local database.</member>
+					<member>&nbsp;</member>
+					<member>default: "https://victims/"</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>entryPoint</title>
+			<para>
+				<simplelist>
+					<member>The entrypoint of the victims webservice to synchronize against.</member>
+					<member>&nbsp;</member>
+					<member>default: "service/"</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>metadata</title>
+			<para>
+				<simplelist>
+					<member>The severity of exception to be thrown when a dependency is encountered that matches the known vulnerable database based on metadata. Fatal indicates the build should fail, warning indicates a warning should be issued but the build should proceed.</member>
+					<member>&nbsp;</member>
+					<member>options: warning, fatal, disabled</member>
+					<member>default: warning</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>fingerprint</title>
+			<para>
+				<simplelist>
+					<member>The severity of exception to be thrown when a dependency is encountered that matches the known vulnerable database based on a fingerprint. Fatal indicates the build should fail, warning indicates a warning should be issued but the build should proceed.</member>
+					<member>&nbsp;</member>
+					<member>options: warning, fatal, disabled</member>
+					<member>default: fatal</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>updates</title>
+			<para>
+				<simplelist>
+					<member>Allows the configuration of the synchronization mechanism. In automatic mode new entries in the victims database are pulled from the victims-web instance during each build. In daily mode new entries are pulled from the victims-web instance only once per day. The synchronization mechanism may be disabled and processed manually for closed build environments.</member>
+					<member>&nbsp;</member>
+					<member>options: auto, offline, daily</member>
+					<member>default: auto</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>jdbcDriver</title>
+			<para>
+				<simplelist>
+					<member>The jdbc driver to use for the local victims database. By default victims uses an embedded H2 database.</member>
+					<member>&nbsp;</member>
+					<member>default: org.h2.Driver</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>jdbcUrl</title>
+			<para>
+				<simplelist>
+					<member>The jdbc connection URL to for the local victims database.</member>
+					<member>&nbsp;</member>
+					<member>default: .victims (embedded h2 instance)</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>jdbcUser</title>
+			<para>
+				<simplelist>
+					<member>The username to use for the jdbc connection.</member>
+					<member>&nbsp;</member>
+					<member>default: "victims"</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>jdbcPass</title>
+			<para>
+				<simplelist>
+					<member>The password to use for the jdbc connection.</member>
+					<member>&nbsp;</member>
+					<member>default: "victims"</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>Build Directory or File</title>
+			<para>
+				<simplelist>
+					<member>The output directory of your build or the file produced. If a directory is supplied the plugin will recursively scan the directory for .jar files.</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>Verbose File Scanning</title>
+			<para>
+				<simplelist>
+					<member>If set the log will list all files scanned and whether they are cached or not.</member>
+					<member>&nbsp;</member>
+					<member>default: false</member>
+				</simplelist>
+			</para>
+		</formalpara>
+	</section>
+	<section id="sect-Jenkins_Plugin_User_Guide_Usage-building_project.xml">
+		<title>Building Your Project</title>
+		<para>
+			Once the configuration has been saved the victims plugin will run the next time the project is built.
+		</para>
+		<para>
+			The plugin will run after the project is built.  If the plugin isn't configured to fail the build will still succeed with vulnerabilities.  To find out the results of the scan check the build log.
+		</para>
+	</section>
+</chapter>
+

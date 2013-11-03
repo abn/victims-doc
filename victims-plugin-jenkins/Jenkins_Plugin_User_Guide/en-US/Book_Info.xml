@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE bookinfo PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Jenkins_Plugin_User_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<bookinfo id="book-Jenkins_Plugin_User_Guide-Jenkins_Plugin_User_Guide">
+	<title>Jenkins Plugin User Guide</title>
+	<subtitle></subtitle>
+	<productname>Victi.ms</productname>
+	<productnumber></productnumber>
+	<edition>1.0</edition>
+	<pubsnumber></pubsnumber>
+	<abstract>
+		<para>
+			This Jenkins-CI plugin provides the functionality to scan a Java projects dependencies against a database of publicly known vulnerabilities. The canonical version of the database is hosted at <ulink url='https://victi.ms'>https://victi.ms</ulink> and is maintained by Red Hat security teams.
+		</para>
+	</abstract>
+</bookinfo>
+
