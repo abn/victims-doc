@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Eclipse_Plugin_User_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-Eclipse_Plugin_User_Guide-Usage">
+	<title>Usage</title>
+	<para>
+		To use the Eclipse plugin simply install the plugin using an update site and then right click on your project (Only java is supported at the moment) and hit Victims Scan. The default options should be satisfactory for now. Please note that although there are options for fingerprint and metadata they do not have any effect as the scan is not performed as part of the build.
+	</para>
+	<section id="sect-Eclipse_Plugin_User_Guide_Usage-config_options.xml">
+		<title>Configuration Options</title>
+		<formalpara><title>baseUrl</title>
+			<para>
+				<simplelist>
+					<member>The URL of the victims web service used to synchronize the local database.</member>
+					<member>&nbsp;</member>
+					<member>default: "https://victims"</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>entryPoint</title>
+			<para>
+				<simplelist>
+					<member>The entrypoint of the victims webservice to synchronize against.</member>
+					<member>&nbsp;</member>
+					<member>default: "/service"</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>metadata</title>
+			<para>
+				<simplelist>
+					<member>The severity of exception to be thrown when a dependency is encountered that matches the known vulnerable database based on metadata. Fatal indicates the build should fail, warning indicates a warning should be issued but the build should proceed.</member>
+					<member>&nbsp;</member>
+					<member>allowed: warning, fatal, disabled</member>
+					<member>default: warning</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>fingerprint</title>
+			<para>
+				<simplelist>
+					<member>The severity of exception to be thrown when a dependency is encountered that matches the known vulnerable database based on a fingerprint. Fatal indicates the build should fail, warning indicates a warning should be issued but the build should proceed.</member>
+					<member>&nbsp;</member>
+					<member>allowed: warning, fatal, disabled</member>
+					<member>default: fatal</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>updates</title>
+			<para>
+				<simplelist>
+					<member>Allows the configuration of the synchronization mechanism. In automatic mode new entries in the victims database are pulled from the victims-web instance during each build. In daily mode new entries are pulled from the victims-web instance only once per day. The synchronization mechanism may be disabled and processed manually for closed build environments.</member>
+					<member>&nbsp;</member>
+					<member>allowed: auto, offline, daily</member>
+					<member>default: auto</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>jdbcDriver</title>
+			<para>
+				<simplelist>
+					<member>The jdbc driver to use for the local victims database. By default victims uses an embedded H2 database.</member>
+					<member>&nbsp;</member>
+					<member>default: org.h2.Driver</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>jdbcUrl</title>
+			<para>
+				<simplelist>
+					<member>The jdbc connection URL to for the local victims database.</member>
+					<member>&nbsp;</member>
+					<member>default: .victims (embedded h2 instance)</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>jdbcUser</title>
+			<para>
+				<simplelist>
+					<member>The username to use for the jdbc connection.</member>
+					<member>&nbsp;</member>
+					<member>default: "victims"</member>
+				</simplelist>
+			</para>
+		</formalpara>
+		<formalpara><title>jdbcPass</title>
+			<para>
+				<simplelist>
+					<member>The password to use for the jdbc connection.</member>
+					<member>&nbsp;</member>
+					<member>default: "victims"</member>
+				</simplelist>
+			</para>
+		</formalpara>
+	</section>
+</chapter>
+

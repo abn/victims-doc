@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Pom_Scanner_Issues_and_Testing_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-Pom_Scanner_Issues_and_Testing_Guide-testing">
+	<title>Testing</title>
+	<section id="sect-Pom_Scanner_Issues_and_Testing_Guide-Test_Chapter-Test_Section_1">
+		<title>Unit Testing</title>
+		<informaltable frame='all'>
+			<tgroup cols='2' align='left'>
+				<colspec colname='c1'/>
+				<colspec colname='c2'/>
+				<thead>
+					<row>
+						<entry>Test</entry>
+						<entry>Result</entry>
+					</row>
+				</thead>
+				<tbody>
+					<row>
+						<entry>Tests the pom scanner can identify all dependencies.</entry>
+						<entry>Success</entry>
+					</row>
+					<row>
+						<entry>Tests the name resolved by the PomUtils class using artifactId, groupId and version is correct.</entry>
+						<entry>Success</entry>
+					</row>
+					<row>
+						<entry>Tests the name resolved by the PomUtils class using artifactId and groupId is correct.</entry>
+						<entry>Success</entry>
+					</row>
+					<row>
+						<entry>Given a dependency, tests whether the location of said dependency in the local Maven repo is correct.</entry>
+						<entry>Success</entry>
+					</row>
+					<row>
+						<entry>Tests to see if the dependencies of a pom file are being parsed.</entry>
+						<entry>Success</entry>
+					</row>
+					<row>
+						<entry>Tests that if a dependency is supplied wthat is not in the Maven repo the correct system path is returned.</entry>
+						<entry>Success</entry>
+					</row>
+					<row>
+						<entry>Tests that a pom file returns all of the appropriate properties.</entry>
+						<entry>Success</entry>
+					</row>
+				</tbody>
+			</tgroup>
+		</informaltable>
+	</section>
+</chapter>
+

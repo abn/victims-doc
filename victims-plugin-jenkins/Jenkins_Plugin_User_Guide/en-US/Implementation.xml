@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Jenkins_Plugin_User_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-Jenkins_Plugin_User_Guide-Implementation">
+	<title>Implementation</title>
+	<para>
+		Utilising the Victims Java library the program creates a local copy of the database which is then synchronised automatically/daily or not at all based on settings defined when executing the task. Please note that the first execution of the task will take some time as it synchronises the whole Victims database.  The files to scan are passed to the plugin via a setting on the project configuration page. A single jar can be scanned or if a directory is provided then the plugin will recursively scan for all .jar files within it. 
+	</para>
+	<para>
+	The plugin will utilise the caching capabilities of victims-lib-java to make repeated builds more efficient. It also has a concurrent implementation to make large builds with many dependencies quicker.
+	</para>
+</chapter>
+
+

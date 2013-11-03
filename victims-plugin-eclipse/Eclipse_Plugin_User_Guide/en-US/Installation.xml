@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Eclipse_Plugin_User_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-Eclipse_Plugin_User_Guide-Installation">
+	<title>Installation</title>
+	<para>
+		We don't have a deployed jar for this plugin yet but will be hosting one soon. In the meantime you can clone the project and build it yourself. The source code contains two projects, Victims-p2-repo, and Victims-Plugin-Eclipse. Victims-p2-repo is used for automatic resolving of third party non-OSGi dependencies and hosting a p2 compliant repository. It is required that you build this project first before building Victims-Plugin-Eclipse.
+	</para>
+	<para>
+		To perform the build and run the webserver:
+		<programlisting>
+			cd victims-plugin-eclipse/victims-p2-repo/
+			mvn p2:site
+			mvn jetty:run
+		</programlisting>
+	</para>
+	<para>
+		You should then be able to build the Eclipse plugin using:
+		<programlisting>mvn clean install</programlisting>
+	</para>
+</chapter>
+
