@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Victims_Eclipse_Plugin_Issues_and_Testing_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-Victims_Eclipse_Plugin_Issues_and_Testing_Guide-testing">
+	<title>Testing</title>
+	<section id="sect-Victims_Eclipse_Plugin_Issues_and_Testing_Guide-Test_Chapter-Test_Section_1">
+		<title>Unit Testing</title>
+		<informaltable frame='all'>
+			<tgroup cols='2' align='left'>
+				<colspec colname='c1'/>
+				<colspec colname='c2'/>
+				<thead>
+					<row>
+						<entry>Test</entry>
+						<entry>Result</entry>
+					</row>
+				</thead>
+				<tbody>
+					<row>
+						<entry>Tests that applySettings correctly applies defaults.</entry>
+						<entry>Success</entry>
+					</row>
+				</tbody>
+			</tgroup>
+		</informaltable>
+	</section>
+	
+	<section id="sect-Victims_Eclipse_Plugin_Issues_and_Testing_Guide-Test_Chapter-Test_Section_2">
+		<title>System testing</title>
+		<informaltable frame='all'>
+			<tgroup cols='2' align='left'>
+				<colspec colname='c1'/>
+				<colspec colname='c2'/>
+				<thead>
+					<row>
+						<entry>Test</entry>
+						<entry>Result</entry>
+					</row>
+				</thead>
+				<tbody>
+					<row>
+						<entry>Victims plugin runs on project containing dependency listed in Victi.ms database.</entry>
+						<entry>Success</entry>
+					</row>
+				</tbody>
+			</tgroup>
+		</informaltable>
+	</section>
+
+</chapter>
+
