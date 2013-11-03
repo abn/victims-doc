@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Victims-Client-Java_User_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-Victims-Client-Java_User_Guide-Usage">
+	<title>Usage</title>
+	<section id="sect-Victims-Client-Java_User_Guide_scanDirOrFile">
+		<title>Scan Directory Or File</title>
+		<para>
+			-enter finalised dir/file scanning usage here-
+		</para>
+	</section>
+	<section id="sect-Victims-Client-Java_User_Guide_pomscanner">
+		<title>Pom Scanner</title>
+		<para>
+			-enter finalised pom scanning usage here-
+		</para>
+	</section>
+</chapter>
+
